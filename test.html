@@ -1,0 +1,364 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<style>
+#orange {background-color: rgb(233, 181, 122)}
+#grey {background-color: rgb(207, 206, 206); text-align: left;}
+table{ border-bottom: none; border-spacing: 0px; padding: 0px;margin: 0 auto;width: 100%; border: 2px solid black; border-collapse: collapse; }
+td,th {border: 2px solid black; border-spacing: 0px; border-bottom: none  ;height:16px ;font-size: xx-small; }
+#small_title { border: 2px solid black;border-bottom: none ;font-size: 16px;width: 50%;background-color: rgb(233, 181, 122);display: block;margin-top: 16px;}
+#last1{padding-left: 10px;border: 1px;}
+#last2{border: 1px;border-bottom: 1px solid black;}
+#left{ padding-left: 10px; margin: o  auto; text-align:left; font-size: small; font-weight: bold;}
+@page {size: auto;margin: 0;}
+#blockin{text-align: left; border-top: none}
+#grey_center{background-color: rgb(207, 206, 206); text-align: center;}
+</style>
+</head>
+
+<body style='width: 210mm;  min-height: 297mm; margin: 0 auto;padding: 30px;  border-collapse: collapse;'>
+<top>
+<title_top style='text-align:center;'>
+    <p style='font-size: 24px;  margin: 0 auto; font-weight: 1000; '>MYSQL SERVICE REPORT</p>
+    <div style=' width: 400px ; line-height: 1; border-bottom: double 7px black; margin: 0 auto; padding-top: 7px;'></div>
+    <p id='left'> ▣ SITE : 고객사명
+</title_top>
+<scema >
+   <table style='text-align:center;'>
+        <th id='orange' colspan='2'>SERVICE</th>
+        <th id='orange' colspan='4'>WARRANTY: IN ■ OUT □ </th>
+        <th id='orange' colspan='3'>M/A: YES ■ NO □  </th>
+        <tr>
+            <td rowspan='2'  style='font-weight: bold;'>OS</td>
+            <td id='grey_center'>OS ver</td>
+            <td id='grey_center'>CPU</td>
+            <td id='grey_center'>Memory</td>
+            <td id='grey_center'>Hostname</td>
+            <td id='grey_center'>Replication</td>
+            <td id='grey_center' colspan='2' >IP</td>
+            <td id='grey_center'>OS Startup</td>
+        </tr>
+        <tr>
+            <td >CentOS 7.9.2009 </td>
+            <td >4</td>
+            <td >11G</td>
+            <td >node1</td>
+            <td >STANDALONE</td>
+            <td colspan='2' >10.64.23.239 10.64.23.243 172.17.0.1 </td>
+            <td >2022-12-24 00:26:07</td>
+        </tr>
+        <tr>
+            <td rowspan='2' style='font-weight: bold;'>DBMS</td>
+            <td id='grey_center'>MySQL Enterprise</td>
+            <td id='grey_center'>Engine</td>
+            <td id='grey_center'>Character</td>
+            <td id='grey_center'>bufferpool size</td>
+            <td id='grey_center'>Tx_Isolation </td>
+            <td id='grey_center'>Performance Schema</td>
+            <td id='grey_center'> Read Only </td>
+            <td id='grey_center'>DB startup</td>
+        </tr>
+        <tr>
+            <td>8.0.30</td>
+            <td>InnoDB</td>
+            <td>utf8mb4</td>
+            <td>1024 MB</td>
+            <td>REPEATABLE-READ</td>
+            <td>ON</td>
+            <td>OFF</td>
+            <td>2023-01-10 08:37:09    </td>
+        </tr>
+    </table>
+</scema>
+</top>
+
+<medium>
+<small_title id='small_title'> ▣ MYSQL STATUS SUMMARY
+</small_title>
+<table  style='text-align:center;' >
+    <th id='grey' style='text-align: center; font-size: small;'>Check List</th>
+    <th id='grey' style='text-align: center; font-size: small;' colspan='12'>Server Contents</th>
+    <th id='grey' style='text-align: center; font-size: small;'>Results</th>
+
+    <Global_Wait>
+        <tr>
+            <td rowspan='6' id='left'> ■ Global Wait</td>
+            <td id='grey' colspan='6'style='text-align: center;'> Events</td>
+            <td id='grey_center' colspan='3'> Total(count)</td>
+            <td id='grey_center' colspan='3'> Avg Latency</td>
+            <td rowspan='6' style='width: 120px;'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='6' style='text-align: left;'>wait/io/file/innodb/innodb_log_file</td>
+            <td colspan='3'>1704</td>
+            <td style='text-align: right;' colspan='3'>861.82 us</td>
+        </tr>
+        <tr>
+            <td colspan='6' style='text-align: left;'>wait/io/file/innodb/innodb_data_file</td>
+            <td colspan='3'>1918</td>
+            <td colspan='3' style='text-align: right;'>378.63 us</td>
+        </tr>
+        <tr>
+            <td colspan='6' style='text-align: left;'>wait/io/file/innodb/innodb_dblwr_file</td>
+            <td colspan='3'>39</td>
+            <td colspan='3' style='text-align: right;'>402.00 us</td>
+        </tr>
+        <tr>
+            <td colspan='6' style='text-align: left;'>wait/io/file/innodb/innodb_temp_file</td>
+            <td colspan='3'>82</td>
+            <td colspan='3' style='text-align: right;'>104.98 us</td>
+        </tr>
+        <tr>
+            <td colspan='6' style='text-align: left;'>wait/io/file/sql/binlog</td>
+            <td colspan='3'>20</td>
+            <td colspan='3' style='text-align: right;'>93.65 us</td>
+        </tr>
+    </Global_Wait>
+
+    <Slow_Query>
+        <tr>
+            <td rowspan='2' id='left'> ■ Slow Query</td>
+            <td id='grey' colspan='6'> Queries per second avg (s)</td>
+            <td colspan='6'>5.350</td>
+            <td rowspan='2'>OK</td>
+        </tr>
+        <tr>
+            <td id='grey' colspan='6'> Count & Set Time (s)</td>
+            <td colspan='3' >58</td>
+            <td colspan='3' >10.0  </td>
+        </tr>
+    </Slow_Query>
+
+    <Segment_Info>
+        <tr>
+            <td rowspan='2' id='left' > ■ Segment Info</td>
+            <td id='grey' colspan='6' style='text-align: center;'> Total Size  [ Data / Index ]</td>
+            <td id='grey' colspan='6' style='text-align: center;'> User Data Size  [ Data / Index (MB) ]</td>
+            <td rowspan='2'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='6' style='border-bottom: 2px black solid;'>44 GB / 1465 MB</td>
+            <td colspan='6' style='border-bottom: 2px black solid;'>InnoDB 44787.67 / 1088.58<br>
+MyISAM 1167.15 / 376.43<br> </td>
+        </tr>
+    </Segment_Info>
+
+    <Object_Info>
+        <tr>
+            <td rowspan='4' id='left' > ■ Object Info</td>
+            <td  colspan='6' id='blockin' > ▪ Database: 10</td>
+            <td  colspan='6' id='blockin' > ▪ View : 15</td>
+            <td rowspan='4' >OK</td>
+        </tr>
+        <tr>
+            <td  colspan='6' id='blockin' > ▪ Table: 113</td>
+            <td  colspan='6' id='blockin' > ▪ Procedure : 13</td>
+        </tr>
+        <tr>
+            <td  colspan='6' id='blockin' > ▪ Index : 281</td>
+            <td  colspan='6' id='blockin' > ▪ Function : 7</td>
+        </tr>
+        <tr>
+            <td colspan='6' id='blockin' > ▪ Unused Index : 136</td>
+            <td colspan='6' id='blockin' > ▪ Trigger : 0</td>
+        </tr>
+    </Object_Info>
+
+    <Data_File_Status>
+        <tr>
+            <td rowspan='3' id='left' > ■ Data File Status</td>
+            <td id='grey' colspan='6' style='text-align:center' >  Path</td>
+            <td id='grey' colspan='6' style='text-align:center'>  OS F/S Usage (%)</td>
+            <td rowspan='3'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='6' rowspan='2' > /mysql_data/data/ </td>
+            <td colspan='4' style='text-align: left; border-right: none;'> ▪ Mounted on: ( / )  </td>
+            <td colspan='2' style='text-align: left;  border-left: none;'> ▪ Size : 137G </td>
+        </tr>
+        <tr>
+            <td colspan='4' id='blockin' style='border-right: none;'> ▪ Used : 116G (86%)  </td>
+            <td colspan='2' id='blockin' style='border-left: none;'>  ▪ Avail : 21G </td>
+        </tr>
+    </Data_File_Status>
+
+    <Replication_Status>
+        <tr>
+            <td rowspan='2'  id='left' > ■ Replication Status</td>
+            <td id='grey_center' colspan='3' style=' text-align: center;'>  Master Server</td>
+            <td id='grey_center' colspan='3' style='text-align: center;'>  Master Log (position) </td>
+            <td id='grey_center' colspan='3' style=' text-align: center;'>  SQL/IO running </td>
+            <td id='grey_center' colspan='3' style=' text-align: center;'>  Seconds Behind Master</td>
+            <td rowspan='2'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='3'> </td>
+            <td colspan='3'>  </td>
+            <td colspan='3'>    </td>
+            <td colspan='3'> </td>
+        </tr>
+    </Replication_Status>
+
+    <Redo_log_Info>
+        <tr>
+            <td rowspan='2' id='left' > ■ Redo log Info</td>
+            <td colspan='3' id='grey_center' >  Buffer Size</td>
+            <td colspan='3' style='text-align: right;'>8 MB </td>
+            <td colspan='3' id='grey_center'>  trx_commit</td>
+            <td colspan='3' >1</td>
+            <td rowspan='2'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='3' id='grey_center'>  File Size </td>
+            <td colspan='3' style='text-align: right;'>512 MB </td>
+            <td colspan='3' id='grey_center'> Group</td>
+            <td colspan='3'>3</td>
+        </tr>
+    </Redo_log_Info>
+
+    <Binary_log>
+        <tr>
+            <td rowspan='2' id='left' > ■ Binary log</td>
+            <td colspan='3' id='grey_center'> Cache Size</td>
+            <td colspan='3' style='text-align: right;'>32 KB </td>
+            <td colspan='3' id='grey_center'> Expire Log Day</td>
+            <td colspan='3'>0</td>
+            <td rowspan='2'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='3' id='grey_center'> Current File</td>
+            <td colspan='3'style='text-align: center;' >mysql-bin.000102</td>
+            <td colspan='3'id='grey_center'> Position</td>
+            <td colspan='3' >237</td>
+        </tr>
+    </Binary_log>
+
+    <Backup>
+        <tr>
+            <td  id='left' > ■ Backup</td>
+            <td colspan='3' id='grey_center' > Status</td>
+            <td colspan='3'></td>
+            <td colspan='3' id='grey_center' > Usage</td>
+            <td colspan='3'></td>
+            <td>OK</td>
+        </tr>
+    </Backup>
+
+    <Connection>
+        <tr>
+            <td rowspan='4' id='left' > ■ Connection</td>
+            <td colspan='3' id='grey_center' style='border-bottom: 2px black solid;'> Socket</td>
+            <td colspan='3' style='border-bottom: 2px black solid;'>/tmp/mysql.sock</td>
+            <td colspan='3' id='grey_center' style='border-bottom: 2px black solid;'> Port</td>
+            <td colspan='3' style='border-bottom: 2px black solid;'>3306</td>
+            <td rowspan='4'>OK</td>
+        </tr>
+        <tr>
+            <td colspan='6' id='blockin' > ▪ Max Connection : 1000</td>
+            <td colspan='6' id='blockin'> ▪ Threads Connection : 5</td>
+        </tr>
+        <tr>
+            <td colspan='6' id='blockin'> ▪ Max Used Connection : 5</td>
+            <td colspan='6' id='blockin'> ▪ Threads Created : 5</td>
+        </tr>
+        <tr>
+            <td colspan='6' id='blockin' > ▪ Connection : 59</td>
+            <td colspan='6' id='blockin'> ▪ Threads Running : 2</td>
+        </tr>
+    </Connection>
+
+    <Process_Status>
+        <tr>
+            <td rowspan='3' id='left' >  ■ Process Status</td>
+            <td colspan='2' id='grey_center' >  Id</td>
+            <td colspan='2' id='grey_center' >  User</td>
+            <td colspan='2' id='grey_center' > Host</td>
+            <td colspan='2' id='grey_center' > DB</td>
+            <td colspan='2' id='grey_center' > CMD</td>
+            <td colspan='2' id='grey_center' > Time</td>
+            <td rowspan='3' >OK</td>
+        </tr>
+        <tr>
+            <td colspan='2' style='width: 11%;' >63</td>
+            <td colspan='2' style='width: 11%;' >root</td>
+            <td colspan='2' style='width: 11%;' >localhost</td>
+            <td colspan='2' style='width: 11%;' >NULL</td>
+            <td colspan='2' style='width: 11%;' >Query</td>
+            <td colspan='2' style='width: 11%;' >0</td>
+        </tr>
+        <tr>
+            <td colspan='2'></td>
+            <td colspan='2'></td>
+            <td colspan='2'></td>
+            <td colspan='2'></td>
+            <td colspan='2'></td>
+            <td colspan='2'></td>
+        </tr>
+    </Process_Status>
+
+    <Warnings>
+        <tr>
+            <td rowspan='1' id='left'> ■ Warnings</td>
+            <td colspan='12' style='text-align: left;'>2023-01-10T08:37:10.653473+09:00 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.</td>
+            <td rowspan='1'>OK</td>
+        </tr>
+    </Warnings>
+
+    <Error_log>
+        <td rowspan='1' id='left' > ■ Error log</td>
+        <td colspan='12' style='text-align: left;'>2023-01-08T05:10:16.914211+09:00 0 [ERROR] [MY-011204] [Server] Plugin audit_log reported: 'File 'audit.log' should not exist. It may be incomplete. The server crashed.'</td>
+        <td rowspan='1'>OK</td>
+
+    </Error_log>
+
+</table>
+</medium>
+
+<button_layer>
+<small_title id='small_title' style='font-weight: bold;' >
+    ▣ COMMENT
+</small_title>
+<table>
+    <p style='border: 2px black solid ; margin: 0 auto; height:21px; height: 1.5cm;'></p>
+</table>
+<small_title id='small_title' style='font-weight: bold; border-bottom: none;'>
+    ▣ SUPPORT TIME
+</small_title>
+<table>
+    <tr>
+    <td id='grey' style='width: 15%; text-align: center;'>Start Time</td>
+    <td style='width: 15%; text-align: center; color: grey;'>시작시간</td>
+    <td id='grey' style='width: 15%; text-align: center;'>End Time</td>
+    <td style='width: 15%; text-align: center; color: grey;'>종료시간</td>
+    <td id='grey' style='width: 15%; text-align: center;'>ASC</td>
+    <td style='width: 15%; text-align: center; color: grey;'>ASC 시간</td>
+    </tr>
+</table>
+</button_layer>
+
+<footer_leader>
+<table id='last' style='margin-top:3px; border: 0px;'>
+    <tr>
+        <td id='last1'  style='font-weight: bold; font-size: small; '> Repaired by</td>
+        <td id='last2'  style='border-bottom: none;'></td>
+        <td id='last1' style='font-weight: bold;  font-size: small;'>Accepted by</td>
+    </tr>
+    <tr>
+        <td id='last1' >O Date</td>
+        <td id='last2'  style='width:30%;text-align: center;'> 2023-01-10 </td>
+        <td id='last1'>O Dept</td>
+        <td id='last2'>OK</td>
+    </tr>
+    <tr>
+        <td id='last1'  >O DBA</td>
+        <td id='last2' style='text-align: center;' > 점검자</td>
+        <td id='last1'>O Customer</td>
+        <td id='last2' style='width:30%; text-align: center;'>담당고객명</td>
+    </tr>
+</table>
+</footer_leader>
+</body>
+
+</html>
