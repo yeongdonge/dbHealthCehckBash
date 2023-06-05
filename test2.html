@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width: 70%; margin: auto; padding-top: 3em; padding-bottom: 3em;">
+        <p style='font-size: 1.7em; display: flex; justify-content: center; font-weight: 1000; margin: 0 auto;  '>유지보수
+            점검 확인서</p>
+        <div
+            style='width: 20em ; display: flex; border-bottom: 0.2em double black; margin: 0 auto; margin-bottom: 1em; padding-top:0.2em;'>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <span id="top_left" style="margin-bottom: 1em">▣ SITE : KT alpha 쇼핑</span>
+            <span id="top_right">▣ 엔지니어 : 김동영 (인)</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -0.3em;">
+            <span id="top_left">▣ DATE : 2023-05-28</span>
+            <span id="top_right">▣ 담당자 : 김태민 (인)</span>
+        </div>
+        <div id="sub_title">
+            <div>Service</div>
+            <div>Hostname</div>
+            <div>OS ver.</div>
+            <div>MySQL ver.</div>
+        </div>
+        <div class="info-row">
+            <span>KT alpha 쇼핑</span>
+            <span>mciddb01</span>
+            <span>CentOS 7.9</span>
+            <span>MySQL 8.0.31 - Commercial</span>
+        </div>
+        <div id="sub_title">
+            <div>CPU</div>
+            <div>Memory</div>
+            <div>Port</div>
+        </div>
+        <div class="info-row">
+            <span>Intel i7 7600 16CPUz</span>
+            <span>32GB</span>
+            <span>3306</span>
+        </div>
+        <div id="sub_title">
+            <div>Basedir</div>
+            <div>Datadir</div>
+            <div>Logdir</div>
+        </div>
+        <div class="info-row">
+            <span>/home/asd/mysql/</span>
+            <span>/home/asd/mysql/data/</span>
+            <span>/home/asd/mysql/log/</span>
+        </div>
+        <hr>
+        <p
+            style='font-size: 1.3em; display: flex; justify-content: center; font-weight: 1000; margin: 0 auto; margin-bottom: 0.5em;  '>
+            점검 세부
+            항목</p>
+        <div style="border: 0.06em solid black">
+            <div id="detail_title">
+                <div>항목</div>
+                <div>세부 항목</div>
+                <div>기준값</div>
+                <div>점검결과값</div>
+                <div>점검결과</div>
+            </div>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">OS</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">Disk usage</div>
+                    <div class="box">Auto Start Check</div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">80% 이하</div>
+                        <div class="box">권고하지 않음</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">60%</div>
+                    <div class="box">-</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">양호</div>
+                    <div class="box">양호</div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Data & Index Size</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">사용중인 데이터와 인덱스 크기</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">N/A</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">1.3TB</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">양호</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="box">데이터 사이즈 이미지 삽입 란 -----------------</div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="box">ibdata size</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">System Tablespace 증가 여부 확인</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">N/A</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">9.1GB</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">양호</div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="box">MySQL Memory Usage</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">현재 MySQL 메모리 사용률</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">80% 이하</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">67%</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">양호</div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Hit rate</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">InnoDB Buffer Pool hit rate</div>
+                    <div class="box">Key Buffer hit rate</div>
+                    <div class="box">Thread Cache miss rate</div>
+                    <div class="box">Index Usage</div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">100%</div>
+                        <div class="box">100%</div>
+                        <div class="box">0%</div>
+                        <div class="box">100%</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">99%</div>
+                        <div class="box">99%</div>
+                        <div class="box">0%</div>
+                        <div class="box">100%</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">양호</div>
+                    <div class="box">양호</div>
+                    <div class="box">양호</div>
+                    <div class="box">양호</div>
+                </div>
+            </div>
+            <hr>
+            </gr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="box">Max Connection</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">최대 접속된 클라이언트 수</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">80% 이하</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">62%</div>
+                </div>
+                <div class="flex-item">
+                    <div class="box">양호</div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Connection Miss Rate</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Aborted connections</div>
+                        <div class="box">Connections</div>
+                        <div class="box">Connections miss rate</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">1% 미만</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">0.0%</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">양호</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Created Tmp</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Created tmp disk tables</div>
+                        <div class="box">Created tmp tables</div>
+                        <div class="box">Created tmp files</div>
+                        <div class="box">Created disk tmp rate</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">1% 미만</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">0.0%</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">양호</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Status</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Uptime</div>
+                        <div class="box">InnoDB undo history list length</div>
+                        <div class="box">QPS</div>
+                        <div class="box">TPS</div>
+                        <div class="box">InnoDB engine status</div>
+                        <div class="box">Replication Slave status</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">319 days 12hours</div>
+                        <div class="box">39281</div>
+                        <div class="box">12.38</div>
+                        <div class="box">87.65</div>
+                        <div class="box">-</div>
+                        <div class="box">Source</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">MySQL Log</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Error Log</div>
+                        <div class="box">Slow Query Log</div>
+                        <div class="box">Binary Log</div>
+                        <div class="box">Relay Log</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">-</div>
+                        <div class="box">325(21)</div>
+                        <div class="box">11GB</div>
+                        <div class="box">1023MB</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">Full Join</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">select full join</div>
+                        <div class="box">select_scan</div>
+                        <div class="box">sort_merge_passes</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                        <div class="box">N/A</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">325(21)</div>
+                        <div class="box">3112(41)</div>
+                        <div class="box">3291(91)</div>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="merged-column">
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                        <div class="box">양호</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<style>
+    .info-row {
+        margin-top: 0.2em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info-row span {
+        flex: 1;
+        text-align: center;
+    }
+
+    #sub_title {
+        margin-top: 0.5em;
+        display: flex;
+        justify-content: space-between;
+        background-color: bisque;
+        padding: 0.2em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #sub_title div {
+        flex: 1;
+        text-align: center;
+    }
+
+    #detail_title {
+        /* margin-top: 0.5em; */
+        display: flex;
+        justify-content: space-between;
+        background-color: bisque;
+        padding: 0.2em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #detail_title div {
+        flex: 1;
+        text-align: center;
+    }
+
+    #top_left {
+        padding-left: 5em;
+        text-align: left;
+    }
+
+    #top_right {
+        padding-right: 5em;
+        text-align: right;
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .box {
+        flex: 1;
+        height: 100px;
+    }
+
+    .flex-item {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .flex-item div {
+        text-align: center;
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .flex-item {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .merged-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box {
+        height: 1em;
+        padding: 0.5em;
+        /* 다른 스타일링 속성 추가 */
+    }
+</style>
