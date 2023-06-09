@@ -15,6 +15,30 @@ read -p "Enter the my.cnf path (Absolute Path) : " my_cnf
 
 #-------------------------------------------------------------
 ######################### Function Initalize ###################
+
+convert_memory() {
+  value=$1
+  unit=$2
+
+  case $unit in
+    "KB" | "kb")
+      converted=$(awk "BEGIN {print $value}")
+      echo "Converted Value: $converted KB"
+      ;;
+    "MB" | "mb")
+      converted=$(awk "BEGIN {print $value / 1024 }")
+      echo "Converted Value: $converted MB"
+      ;;
+    "GB" | "gb")
+      converted=$(awk "BEGIN {print $value / 1024 / 1024}")
+      echo "Converted Value: $converted GB"
+      ;;
+    *)
+      echo "Invalid unit. Supported units: KB, MB, GB"
+      ;;
+  esac
+}
+
 except() {
     echo "   "
     echo "$1"
@@ -23,8 +47,9 @@ except() {
     exit
 }
 
-get_basedir() {
-    basedir=$(grep "^basedir" ${my_cnf} | awk -F "=" '{print $2}' | tr -d ' ')
+get_cnf_element() {
+    element=$(grep "^$1" ${my_cnf} | awk -F "=" '{print $2}' | tr -d ' ')
+    echo ${element}
 }
 
 get_socket() {
@@ -66,22 +91,36 @@ get_sql_result() {
     echo ${sql_result}
 }
 
+get_os_ver() {
+    release_file=$(ls /etc/*release* 2>/dev/null | head -n 1)
+
+    if [[ -f "$release_file" ]]; then
+        cat ${release_file}
+    fi
+}
+
+get_total_mem() {
+    mem_total=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+    echo ${mem_total}
+}
+
+get_cpu_model() {
+    cpu_model=$(lscpu | grep 'Model name:' | awk -F ':' '{print $2}' | sed -e 's/^[ \t]*//')
+    echo ${cpu_model}
+}
+
 #################################################################
 cnf_inavlid_check ${my_cnf}
-get_basedir
+basedir=$(get_cnf_element 'basedir')
 basedir_invalid_check ${basedir}
 get_socket
 create_extra_cnf my_ext.cnf
 
-test=$(get_sql_result 'select version()')
+version=$(get_sql_result 'select version()')
+os_ver=$(get_os_ver)
+hostname=$(get_sql_result 'select @@hostname')
+mem_total=$(convert_memory $(get_total_mem) "GB")
+cpu_model=$(get_cpu_model)
+port=$(get_sql_result 'select @@port')
 
-echo ${test}
-
-
-
-
-
-
-
-
-
+echo $version $os_ver $hostname $mem_total $cpu_model $port $basedir
