@@ -5,10 +5,14 @@
 customer="고객사명"
 engineer="엔지니어명"
 manager="담당자명"
-read -p "Enter the DB username : " username
-read -sp "Enter the Password : " password
+#read -ep "Enter the DB username : " username
+#read -esp "Enter the Password : " password 
 echo
-read -p "Enter the my.cnf path (Absolute Path) : " my_cnf
+#read -ep "Enter the my.cnf path (Absolute Path) : " my_cnf
+
+username=root
+password=123
+my_cnf=/etc/my.cnf
 #-------------------------------------------------------------
 
 # port=$(awk -F '=' '/\[mysqld\]/{flag=1} flag && /^[^#]/ && /port/{gsub(/^[[:space:]]+|[[:space:]]+$/, ""); print gensub(/[[:space:]]/, "", "g", $2); flag=0}' ${my_cnf})
@@ -38,6 +42,27 @@ convert_memory() {
       ;;
   esac
 }
+
+convert_size() {
+  local size=$1
+  local bias=0
+
+  while [ $size -ge 1024 ]; do
+      size=$((size / 1024))
+      bias=$((bias + 1))
+  done
+
+  case $bias in
+    0) unit="Btye";;
+    1) unit="KB";;
+    2) unit="MB";;
+    3) unit="GB";;
+    4) unit="TB";;
+  esac
+
+  echo "$size$unit"
+}
+
 
 except() {
     echo "   "
@@ -122,5 +147,12 @@ hostname=$(get_sql_result 'select @@hostname')
 mem_total=$(convert_memory $(get_total_mem) "GB")
 cpu_model=$(get_cpu_model)
 port=$(get_sql_result 'select @@port')
+datadir=$(get_sql_result 'select @@datadir')
+binary_log=$(get_sql_result 'select @@innodb_data_home_dir')
+error_log=$(get_sql_result 'select @@log_error')
+slow_query_log=$(get_sql_result 'select @@slow_query_log_file')
+data_index_size=$(convert_size $(get_sql_result 'select sum(index_length+data_length) from information_schema.tables'))
 
-echo $version $os_ver $hostname $mem_total $cpu_model $port $basedir
+
+
+echo $version $os_ver $hostname $mem_total $cpu_model $port $basedir $datadir $binary_log $error_log $slow_query_log $data_index_size
